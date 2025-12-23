@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBEX安全验证</title>
+  <style>
+    /* 邮件客户端兼容的响应式样式 */
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .content-table {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .mobile-padding {
+        padding: 10px !important;
+      }
+      .mobile-text {
+        font-size: 14px !important;
+      }
+      .mobile-title {
+        font-size: 16px !important;
+      }
+      .anti-phishing-mobile {
+        /*display: block !important;*/
+        float: none !important;
+        /*width: 100% !important;*/
+        margin-top: 10px !important;
+      }
+    }
+
+    /* 确保在所有邮件客户端中正确显示 */
+    .email-wrapper {
+      width: 100%;
+      background-color: #f5f5f5;
+      padding-bottom: 20px;
+    }
+
+    .email-container {
+      max-width: 660px;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+
+    .content-table {
+      width: 100%;
+      max-width: 660px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5;">
+<!-- 外层包装器，用于背景色和整体布局 -->
+<div class="email-wrapper">
+  <!-- 主容器，PC端最大宽度660px，移动端100% -->
+  <div class="email-container">
+    <table class="content-table" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 660px; background-color: #fff;">
+      <thead>
+      <tr>
+        <td style="background: url('https://imgs.ubex.me/email_hbg.png') center center no-repeat;background-size: 100% 100%;height: 82px;text-align: center; vertical-align: middle;">
+            <img style="width: 150px; height: 26px;" src="https://img.chainbitx.com/chainbitx.png" alt="CHAINBITX Logo"/>
+        </td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr style="background-color: #fff;">
+        <td class="mobile-padding" style="font-weight: bold; color: #000; padding: 20px 15px 15px 15px; font-size: 18px;">
+          <span class="mobile-title">尊敬的用户</span>
+        </td>
+      </tr>
+      <tr style="background-color: #fff;">
+        <td class="mobile-padding" style="padding: 0px 15px; font-size: 14px; color: #000;">
+          <span class="mobile-text">您的验证码为：</span>
+        </td>
+      </tr>
+      <tr style="background-color: #fff;">
+        <td class="mobile-padding" style="padding: 15px 15px;">
+          <div style="font-weight: bold; color: #000; font-size: 18px; display: inline-block;">
+            {code}
+          </div>
+        </td>
+      </tr>
+      <tr style="background-color: #fff;">
+        <td class="mobile-padding" style="padding: 0px 15px 25px 15px; font-size: 14px; color: #000;">
+          <span class="mobile-text">验证码有效期为5分钟。如果这不是您本人操作的，请检查您的账户并更改安全设置。</span>
+        </td>
+      </tr>
+      <tr style="background-color: #fff;">
+        <td class="mobile-padding" style="padding: 0px 15px 20px 15px; font-size: 14px; color: #000;">
+          <span class="mobile-text">UBEX团队</span>
+        </td>
+      </tr>
+      </tbody>
+
+        <tfoot>
+        <tr>
+          <td>
+            <div style="height: 1px; border-top: 1px solid #2BE61D; margin: 0 15px;"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="padding: 15px 0 10px; text-align: center; font-size: 16px; font-weight: 600; color: #2BE61D">友情提醒</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="text-align: center">
+              <a href="https://medium.com/@ubex.me" target="_blank" style="margin-right: 21px; text-decoration: none;">
+                <img style="width: 20px; height: 20px;" src="https://imgs.ubex.me/icon_2.png" alt="Medium">
+              </a>
+              <a href="https://x.com/UBEX_ME" target="_blank" style="margin-right: 21px; text-decoration: none;">
+                <img style="width: 20px; height: 20px;" src="https://imgs.ubex.me/icon_5.png" alt="Twitter">
+              </a>
+              <a href="https://t.me/UBEX_ME" target="_blank" style="margin-right: 21px; text-decoration: none;">
+                <img style="width: 20px; height: 20px;" src="https://imgs.ubex.me/icon_7.png" alt="Telegram">
+              </a>
+              <a href="https://discord.com/invite/gFG44QD2g8" target="_blank" style="text-decoration: none;">
+                <img style="width: 20px; height: 20px;" src="https://imgs.ubex.me/icon_8.png" alt="Discord">
+              </a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile-padding">
+            <div style="padding: 20px 15px 10px 15px; font-size: 12px; color: #000;">
+              <div>
+                <div style="display: inline-block; line-height: 26px;">
+                  <span class="mobile-text">为保障您的安全，请在<a href="https://ubex.me/securitySetting" target="_blank"
+                                                                   style="font-weight: 600; color: #2BE61D;">此处</a>设置防钓鱼代码</span>
+                </div>
+                <div class="anti-phishing-mobile" style="display: {displayStyle}; float: right; width: fit-content; border: 1px solid #2BE61D; border-radius: 4px; font-weight: bold; color: #252525; font-size: 14px;">
+                  <div style="display: inline-block; padding: 2px 12px; color: #252525; background: #2BE61D">防钓鱼码</div>
+                  <div style="display: inline-block; padding: 2px 12px; color: #000; font-weight: 600; background: #2BE61D0F">
+                    {antiScamCode}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile-padding">
+            <div style="padding: 10px 15px; font-size: 12px; color: #000;">
+              <span class="mobile-text">
+                <span style="font-weight: bold">免责声明：</span>数字资产受市场高风险和价格波动影响。您的投资价值可能会下跌或上涨，且投资本金可能无法收回。您对自己的投资决策全权负责，UBEX对您可能遭受的任何损失概不负责。过往表现并非未来表现的可靠指标。投资者应只投资自己熟悉的产品，并了解其中风险所在。投资者应谨慎考虑个人投资经验、财务状况、投资目标以及风险承受能力。请在投资前咨询独立财务顾问。本文不应视为财务建议。欲知详情，敬请参阅我们的<a
+                href="https://ubexsupport.zendesk.com/hc/zh-cn/categories/49558933867929-%E5%85%B3%E4%BA%8EUBEX-%E6%9D%A1%E6%AC%BE%E4%B8%8E%E6%9D%A1%E4%BB%B6"
+                target="_blank"
+                style="font-weight: 600; color: #2BE61D;">《条款与条件》</a>。
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile-padding">
+            <div style="padding: 10px 15px; font-size: 12px; color: #000;">
+              <span class="mobile-text">
+                <span style="font-weight: bold">请注意：</span>警惕网络钓鱼网站。您输入敏感数据时，务必确认正在访问的是<a
+                href="https://ubex.me/home" target="_blank"
+                style="font-weight: 600; color: #2BE61D;">UBEX.ME</a>官网。
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile-padding">
+            <div style="padding: 0 15px; font-size: 12px; color: #000;">
+              <span class="mobile-text">收到本邮件即表明您已成为UBEX官网的注册用户</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mobile-padding">
+            <div style="padding: 0 15px; font-size: 12px; color: #000;">
+              <span class="mobile-text">欲详细了解我们处理数据的方式，敬请参阅 <a
+              href="https://ubexsupport.zendesk.com/hc/zh-cn/articles/44348868151833-%E7%94%A8%E6%88%B7%E4%B8%8E%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE"
+              target="_blank"
+              style="font-weight: 600; color: #2BE61D;">隐私政策</a></span>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div style="font-size: 10px; color: #000; padding: 12px 0; text-align: center; vertical-align: middle;">
+              © 2025 UBEX.ME，All Rights Reserved.
+            </div>
+          </td>
+        </tr>
+        </tfoot>
+    </table>
+  </div>
+</div>
+</body>
+</html>
